@@ -1,6 +1,6 @@
 {
-  "name": "ts-function-override",
-  "version": "1.0.7",
+  "name": "ts-overload",
+  "version": "1.0.2",
   "description": "Tool for easy method overriding",
   "private": false,
   "keywords": [
@@ -14,7 +14,7 @@
   "author": "Alexey Medvedev <imyevolove@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imyevolove/ts-function-override"
+    "url": "https://github.com/imyevolove/ts-overload"
   },
   "license": "MIT",
   "scripts": {

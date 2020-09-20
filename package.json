@@ -1,7 +1,7 @@
 {
   "name": "ts-overload",
-  "version": "1.0.2",
-  "description": "Tool for easy method overriding",
+  "version": "1.0.3",
+  "description": "Tool for easy methods overloading",
   "private": false,
   "keywords": [
     "override",

@@ -1,5 +1,4 @@
-import FunctionOverload from "../src/overload/FunctionOverload";
-import * as test from 'tape'
+import { FunctionOverload } from "../src/index";
 
 class Overloading
 {
@@ -50,7 +49,7 @@ class Overloading
 
 const overloading = new Overloading();
 
-test('0 args', tape => { tape.equal(overloading.sum(), 0); tape.end(); })
-test('1 args', tape => { tape.equal(overloading.sum(10), 10); tape.end(); })
-test('2 args', tape => { tape.equal(overloading.sum(10, 5), 15); tape.end(); })
-test('str arg', tape => { tape.equal(overloading.sum('13'), 13); tape.end(); })
+console.log(overloading.sum());
+console.log(overloading.sum(10));
+console.log(overloading.sum(10));
+console.log(overloading.sum('13'));

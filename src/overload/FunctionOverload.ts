@@ -10,18 +10,18 @@ interface FunctionOverloadBuildDelegate {
 export default class FunctionOverload
 {
     public static overload<T>(context: T, propertyName: keyof T, buildAction: FunctionOverloadBuildDelegate) 
-{
-    const target = (context as Object).constructor;
-    const metadataKey = `override-${propertyName}`;
-    const propertyKey = propertyName.valueOf() as string;
-
-    if(!Reflect.hasMetadata(metadataKey, target, propertyKey))
     {
-        const builder = new FunctionOverloadProviderBuilder();
-        buildAction(builder);
-        Reflect.defineMetadata(metadataKey, builder.build(), target, propertyKey);
-    }
-    
-    return Reflect.getMetadata(metadataKey, target, propertyKey) as IFunctionOverloadProvider;
-};
+        const target = (context as Object).constructor;
+        const encodedKey = Buffer.from(`${target.name}-overload-${propertyName}`, 'binary').toString('base64');
+        const metadataKey = `_${encodedKey}`;
+        
+        if(!target.prototype.hasOwnProperty(metadataKey))
+        {
+            const builder = new FunctionOverloadProviderBuilder();
+            buildAction(builder);
+            target.prototype[metadataKey] = builder.build();
+        }
+        
+        return target.prototype[metadataKey];
+    };
 }

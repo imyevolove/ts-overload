@@ -1,3 +1,4 @@
 import IFunctionOverloadProvider from "./overload/abstractions/IFunctionOverloadProvider";
 import FunctionOverload from "./overload/FunctionOverload";
-export default FunctionOverload;
+import FunctionOverloadDescriptor from "./overload/FunctionOverloadDescriptor";
+export { FunctionOverload, FunctionOverloadDescriptor };
